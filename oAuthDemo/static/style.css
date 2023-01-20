@@ -1,0 +1,18 @@
+body{
+    margin-top:200px;
+    margin-bottom: 100px;
+    margin-left: 700;
+}
+a{
+    width: 100px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 250px;
+    height: 40px;
+    line-height: 45px;
+    padding-top: 2px;
+}

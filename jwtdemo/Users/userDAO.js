@@ -1,5 +1,7 @@
 const users = require("./users.json");
 const fs = require('fs');
+
+
 function findUser(email, done){
     console.log(email);
     const userFetched = users.filter((user)=>user.email == email)

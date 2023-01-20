@@ -3,7 +3,9 @@ const jwt = require('jsonwebtoken');
 const config = require("../config");
 
 function verifyUser({email, password}, userData){
-    if(email === userData.email && password == userData.password){
+    // console.log(userData)
+    // console.log(userData[0].email == email)
+    if(email == userData[0].email && password == userData[0].password){
         return true;
     }
     return false;
@@ -12,9 +14,10 @@ function verifyUser({email, password}, userData){
 function createJWT(userData){
     const payload = {
         role : "user",
-        email : userData.email,
-        name : userData.name 
+        email : userData[0].email,
+        name : userData[0].name 
     } 
+    console.log(payload)
     let token = jwt.sign(payload, config.AUTH_Token, {
         expiresIn:3600,
     });

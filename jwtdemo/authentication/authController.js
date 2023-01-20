@@ -24,8 +24,11 @@ function loginUser({email, password}, done){
         if(err){
             done(err);
         }
+        // console.log("bhaI", userFound)
         const userVerified = authService.verifyUser({email, password}, userFound);
-        if(userFound){
+        console.log(userVerified)
+        if(userVerified){
+            console.log(userFound)
             const jwtToken = authService.createJWT(userFound);
             done(undefined, jwtToken);
         }

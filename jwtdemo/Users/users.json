@@ -13,5 +13,9 @@
         "name": "harshit",
         "email": "a@mail.com",
         "password": "123"
+    },
+    {
+        "email": "a1@mail.com",
+        "password": "123"
     }
 ]
