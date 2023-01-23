@@ -6,7 +6,7 @@ function findUser(email, done){
     console.log(email);
     const userFetched = users.filter((user)=>user.email == email)
     console.log(userFetched)
-    done(undefined, userFetched);   
+    done(undefined, userFetched);
 }
 
 
