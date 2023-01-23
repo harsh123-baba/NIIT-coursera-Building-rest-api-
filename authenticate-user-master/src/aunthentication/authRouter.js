@@ -1,9 +1,10 @@
 
+
+//import the modules that are required
+
 const express = require('express');
 const router = express.Router();
 const authController = require("./authController");
-//import the modules that are required
-
 //This method post will regiater the use
 router.post('/register',(req,res)=>{
   
@@ -18,6 +19,8 @@ authController.registerUser(userDetails,(err,result)=>{
 
 //This method post will login the user once they are registered
 router.post('/login',(req,res)=>{
+   
+
         const {email, password} = req.body;
         if(!(email && password)){
             return res.status(400).send("required inputs are missing");

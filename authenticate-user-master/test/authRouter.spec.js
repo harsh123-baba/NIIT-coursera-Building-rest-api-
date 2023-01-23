@@ -27,7 +27,7 @@ const app = require("../app");
           expect(res.body.data).not.to.be.null;
           expect(res.body.data).to.equal(token);
         
-        
+         
           done(err);
         });
     });
