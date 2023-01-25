@@ -1,15 +1,15 @@
-const userDao =  require('./userDao');
+const userDAO = require('./userDAO');
 
 //import dao layer
 function findUser(email,done){
     //call the userdao finduser method
-    userDao.findUser(email, done);
+    userDAO.findUser(email, done);
+    
 }
 
 function registerUser(userData,done){
     //call the userdao registeruser method
    
-    userDao.registerUser(userData, done);
 }
 
 

@@ -1,10 +1,9 @@
-
-
-//import the modules that are required
-
 const express = require('express');
 const router = express.Router();
 const authController = require("./authController");
+
+//import the modules that are required
+
 //This method post will regiater the use
 router.post('/register',(req,res)=>{
   
@@ -21,18 +20,32 @@ authController.registerUser(userDetails,(err,result)=>{
 router.post('/login',(req,res)=>{
    
 
-        const {email, password} = req.body;
-        if(!(email && password)){
-            return res.status(400).send("required inputs are missing");
-        }
-        authController.loginUser({email, password}, (err, result)=>{
-            if(err){
-                res.status(401).send({error:"Invalid Credantials", err})
+        //retrive email and password from req.body
+      
+        //calling the authController login usermethod return the error or the result 
+        // authController.loginUser({email,password},(err,result)=>{
+           
+        // })
+        try{
+                const {email, password} = req.body;
+                if(!(email && password)){
+                    return res.status(400).send("required inputs are missing");
+        
+                }
+                authController.loginUser({email, password}, (err, result)=>{
+                    if(err){
+                        res.status(401).send({error:"Invalid Credantials", err})
+                    }
+                    else{
+                        res.status(200).send({STATUS:"OK", data:result});
+                    }
+                })
+        
             }
-            else{
-                res.status(200).send({STATUS:"OK", data:result});
+            catch(err){
+                console.log("bhia")
+        
             }
-        })
 
 })
 
